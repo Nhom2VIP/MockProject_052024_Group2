@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  @apply bg-primary text-primary;
+}
+
+* {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #dcdde1;
+  --color-text-primary: #2d3748;
+  --color-text-secondary: #ffffff;
+  --color-text-accent: #2b6cb0;
+  --color-bg-input: #edf2f7;
+  --color-bg-button: #000000;
+  --color-bg-button-hover: #333333
+}
