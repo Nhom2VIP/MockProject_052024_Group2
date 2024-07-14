@@ -3,6 +3,8 @@ import RootPage from "../pages/RootPage";
 import HomePage from "../pages/HomePage/HomePage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
+import SearchPage from "../pages/SearchPage/SearchPage";
+import PlaceBid from "../pages/PlaceBid/PlaceBid";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +22,15 @@ const router = createBrowserRouter([
       {
         path:"register",
         element:<RegisterPage/>
+      },
+      {
+        path:"search",
+        element: <SearchPage />
+      },
+      {
+        path: "place-bid",
+        element: <PlaceBid />
       }
-
     ],
   },
 ]);
