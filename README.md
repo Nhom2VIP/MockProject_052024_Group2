@@ -1,9 +1,11 @@
 # MockProject_052024_Group2
+
 ... dev branch test
 
 ## Front-end
 
 ### Project Structure
+
 ```sh
 .
 ├── README.md
@@ -34,23 +36,30 @@
 
 ### Naming Conventions
 
-#### Components 
+#### Components
+
 PascalCase
 
-#### Props 
+#### Props
+
 camelCase
 
-#### State 
+#### State
+
 camelCase
 
-#### Events 
+#### Events
+
 Start with handle or on, followed by the event name
 
-#### Functions and Methods 
+#### Functions and Methods
+
 camelCase, describe their purpose clearly
 
 #### Hooks
+
 Start with use followed by a brief description of their purpose
 
 #### Constants
+
 Uppercase with words separated by underscores _
