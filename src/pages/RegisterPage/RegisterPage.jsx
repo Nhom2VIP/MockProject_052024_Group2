@@ -1,63 +1,44 @@
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import { FaApple, FaFacebook } from "react-icons/fa";
 import { GrGoogle } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
+const schema = yup.object().shape({
+  email: yup.string().email("Email is invalid").required("Email is required"),
+  username: yup.string().required("Username is required"),
+  firstname: yup.string().required("First name is required"),
+  lastname: yup.string().required("Last name is required"),
+  country: yup.string().required("Country is required"),
+  city: yup.string().required("City is required"),
+  address: yup.string().required("Address is required"),
+  state: yup.string().required("State is required"),
+  bankName: yup.string().required("Bank name is required"),
+  bankNumber: yup.string().required("Bank number is required"),
+  bankBranch: yup.string().required("Bank branch is required"),
+  password: yup
+    .string().required("Password is required")
+    .min(6, "Password must be at least 6 characters")
+    ,
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "Passwords do not match")
+    .required("Confirm password is required"),
+});
+
 const Register = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    username: "",
-    firstname: "",
-    lastname: "",
-    country: "",
-    city: "",
-    address: "",
-    state: "",
-    bankName: "",
-    bankNumber: "",
-    bankBranch: "",
-    password: "",
-    confirmPassword: "",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
   });
 
-  const [errors, setErrors] = useState({});
-
-  const validate = () => {
-    const newErrors = {};
-    Object.keys(formData).forEach((key) => {
-      if (!formData[key]) {
-        newErrors[key] = `${key.charAt(0).toUpperCase() + key.slice(1)} is required`;
-      }
-    });
-    
-    if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid";
-    }
-
-    if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters";
-    }
-
-    if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = "Passwords do not match";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validate()) {
-      console.log("Form data is valid:", formData);
-    }
+  const onSubmit = (data) => {
+    console.log("Form data is valid:", data);
   };
 
   return (
@@ -69,7 +50,7 @@ const Register = () => {
       <div className="flex-1 flex items-center p-12">
         <div className="bg-white rounded-xl max-w-full w-full p-8">
           <h2 className="text-3xl font-bold mb-6">Create an account</h2>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="space-y-4">
               <div className="flex flex-col md:flex-row space-x-0 md:space-x-4">
                 <div className="w-full">
@@ -78,11 +59,10 @@ const Register = () => {
                     name="email"
                     className="w-full mb-4 md:mb-0 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
                     placeholder="Email (*)"
-                    value={formData.email}
-                    onChange={handleChange}
+                    {...register("email")}
                   />
                   {errors.email && (
-                    <span className="text-red-500 text-sm">{errors.email}</span>
+                    <span className="text-red-500 text-sm">{errors.email.message}</span>
                   )}
                 </div>
                 <div className="w-full">
@@ -91,11 +71,10 @@ const Register = () => {
                     name="username"
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
                     placeholder="Username (*)"
-                    value={formData.username}
-                    onChange={handleChange}
+                    {...register("username")}
                   />
                   {errors.username && (
-                    <span className="text-red-500 text-sm">{errors.username}</span>
+                    <span className="text-red-500 text-sm">{errors.username.message}</span>
                   )}
                 </div>
               </div>
@@ -106,11 +85,10 @@ const Register = () => {
                     name="firstname"
                     className="w-full mb-4 md:mb-0 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
                     placeholder="First name (*)"
-                    value={formData.firstname}
-                    onChange={handleChange}
+                    {...register("firstname")}
                   />
                   {errors.firstname && (
-                    <span className="text-red-500 text-sm">{errors.firstname}</span>
+                    <span className="text-red-500 text-sm">{errors.firstname.message}</span>
                   )}
                 </div>
                 <div className="w-full">
@@ -119,11 +97,10 @@ const Register = () => {
                     name="lastname"
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
                     placeholder="Last name (*)"
-                    value={formData.lastname}
-                    onChange={handleChange}
+                    {...register("lastname")}
                   />
                   {errors.lastname && (
-                    <span className="text-red-500 text-sm">{errors.lastname}</span>
+                    <span className="text-red-500 text-sm">{errors.lastname.message}</span>
                   )}
                 </div>
               </div>
@@ -134,11 +111,10 @@ const Register = () => {
                     name="country"
                     className="w-full mb-4 md:mb-0 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
                     placeholder="Country (*)"
-                    value={formData.country}
-                    onChange={handleChange}
+                    {...register("country")}
                   />
                   {errors.country && (
-                    <span className="text-red-500 text-sm">{errors.country}</span>
+                    <span className="text-red-500 text-sm">{errors.country.message}</span>
                   )}
                 </div>
                 <div className="w-full">
@@ -147,11 +123,10 @@ const Register = () => {
                     name="city"
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
                     placeholder="City (*)"
-                    value={formData.city}
-                    onChange={handleChange}
+                    {...register("city")}
                   />
                   {errors.city && (
-                    <span className="text-red-500 text-sm">{errors.city}</span>
+                    <span className="text-red-500 text-sm">{errors.city.message}</span>
                   )}
                 </div>
               </div>
@@ -162,11 +137,10 @@ const Register = () => {
                     name="address"
                     className="w-full mb-4 md:mb-0 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
                     placeholder="Address (*)"
-                    value={formData.address}
-                    onChange={handleChange}
+                    {...register("address")}
                   />
                   {errors.address && (
-                    <span className="text-red-500 text-sm">{errors.address}</span>
+                    <span className="text-red-500 text-sm">{errors.address.message}</span>
                   )}
                 </div>
                 <div className="w-full">
@@ -175,11 +149,10 @@ const Register = () => {
                     name="state"
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
                     placeholder="State (*)"
-                    value={formData.state}
-                    onChange={handleChange}
+                    {...register("state")}
                   />
                   {errors.state && (
-                    <span className="text-red-500 text-sm">{errors.state}</span>
+                    <span className="text-red-500 text-sm">{errors.state.message}</span>
                   )}
                 </div>
               </div>
@@ -190,11 +163,10 @@ const Register = () => {
                     name="bankName"
                     className="w-full mb-4 md:mb-0 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
                     placeholder="Bank name (*)"
-                    value={formData.bankName}
-                    onChange={handleChange}
+                    {...register("bankName")}
                   />
                   {errors.bankName && (
-                    <span className="text-red-500 text-sm">{errors.bankName}</span>
+                    <span className="text-red-500 text-sm">{errors.bankName.message}</span>
                   )}
                 </div>
                 <div className="w-full">
@@ -203,11 +175,10 @@ const Register = () => {
                     name="bankNumber"
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
                     placeholder="Bank number (*)"
-                    value={formData.bankNumber}
-                    onChange={handleChange}
+                    {...register("bankNumber")}
                   />
                   {errors.bankNumber && (
-                    <span className="text-red-500 text-sm">{errors.bankNumber}</span>
+                    <span className="text-red-500 text-sm">{errors.bankNumber.message}</span>
                   )}
                 </div>
                 <div className="w-full">
@@ -216,11 +187,10 @@ const Register = () => {
                     name="bankBranch"
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
                     placeholder="Bank branch (*)"
-                    value={formData.bankBranch}
-                    onChange={handleChange}
+                    {...register("bankBranch")}
                   />
                   {errors.bankBranch && (
-                    <span className="text-red-500 text-sm">{errors.bankBranch}</span>
+                    <span className="text-red-500 text-sm">{errors.bankBranch.message}</span>
                   )}
                 </div>
               </div>
@@ -231,11 +201,10 @@ const Register = () => {
                     name="password"
                     className="w-full mb-4 md:mb-0 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
                     placeholder="Password (*)"
-                    value={formData.password}
-                    onChange={handleChange}
+                    {...register("password")}
                   />
                   {errors.password && (
-                    <span className="text-red-500 text-sm">{errors.password}</span>
+                    <span className="text-red-500 text-sm">{errors.password.message}</span>
                   )}
                 </div>
                 <div className="w-full">
@@ -244,11 +213,10 @@ const Register = () => {
                     name="confirmPassword"
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
                     placeholder="Confirm password (*)"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
+                    {...register("confirmPassword")}
                   />
                   {errors.confirmPassword && (
-                    <span className="text-red-500 text-sm">{errors.confirmPassword}</span>
+                    <span className="text-red-500 text-sm">{errors.confirmPassword.message}</span>
                   )}
                 </div>
               </div>
