@@ -1,25 +1,33 @@
 package com.example.mockproject_052024_group2.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Setter
 @Getter
+@Table(name = "products")
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class Product extends BaseEntity{
-
-    private  String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "product_id")
+    private long id;
+    private String name;
     private String category;
+    private double price;
     private String description;
-    private Double price;
+    @OneToMany(mappedBy = "product")
+    @JsonIgnore
+    private List<Auction> auctions;
     @ManyToOne
-    @JoinColumn(name = "inventoryId")
+    @JoinColumn(name = "inventory_id")
     private Inventory inventory;
 }
