@@ -1,0 +1,104 @@
+[
+    {
+        "name": "Rainbow Diamond",
+        "image": "https://example.com/images/rainbow-diamond.png",
+        "startBid": "999",
+        "startDate": "30/6/2024"
+    },
+    {
+        "name": "Sunset Sapphire",
+        "image": "https://example.com/images/sunset-sapphire.png",
+        "startBid": "1200",
+        "startDate": "15/7/2024"
+    },
+    {
+        "name": "Aurora Emerald",
+        "image": "https://example.com/images/aurora-emerald.png",
+        "startBid": "1500",
+        "startDate": "10/7/2024"
+    },
+    {
+        "name": "Galaxy Opal",
+        "image": "https://example.com/images/galaxy-opal.png",
+        "startBid": "800",
+        "startDate": "5/7/2024"
+    },
+    {
+        "name": "Mystic Topaz",
+        "image": "https://example.com/images/mystic-topaz.png",
+        "startBid": "1100",
+        "startDate": "20/7/2024"
+    },
+    {
+        "name": "Celestial Ruby",
+        "image": "https://example.com/images/celestial-ruby.png",
+        "startBid": "2000",
+        "startDate": "1/8/2024"
+    },
+    {
+        "name": "Starlight Diamond",
+        "image": "https://example.com/images/starlight-diamond.png",
+        "startBid": "2500",
+        "startDate": "12/7/2024"
+    },
+    {
+        "name": "Lunar Pearl",
+        "image": "https://example.com/images/lunar-pearl.png",
+        "startBid": "950",
+        "startDate": "18/7/2024"
+    },
+    {
+        "name": "Sunrise Amber",
+        "image": "https://example.com/images/sunrise-amber.png",
+        "startBid": "1300",
+        "startDate": "22/7/2024"
+    },
+    {
+        "name": "Ocean Aquamarine",
+        "image": "https://example.com/images/ocean-aquamarine.png",
+        "startBid": "1750",
+        "startDate": "25/7/2024"
+    },
+    {
+        "name": "Desert Citrine",
+        "image": "https://example.com/images/desert-citrine.png",
+        "startBid": "1150",
+        "startDate": "28/7/2024"
+    },
+    {
+        "name": "Forest Jade",
+        "image": "https://example.com/images/forest-jade.png",
+        "startBid": "1400",
+        "startDate": "30/7/2024"
+    },
+    {
+        "name": "Polar Amethyst",
+        "image": "https://example.com/images/polar-amethyst.png",
+        "startBid": "1050",
+        "startDate": "2/8/2024"
+    },
+    {
+        "name": "Blazing Garnet",
+        "image": "https://example.com/images/blazing-garnet.png",
+        "startBid": "1550",
+        "startDate": "4/8/2024"
+    },
+    {
+        "name": "Twilight Onyx",
+        "image": "https://example.com/images/twilight-onyx.png",
+        "startBid": "1650",
+        "startDate": "6/8/2024"
+    },
+    {
+        "name": "Dawn Peridot",
+        "image": "https://example.com/images/dawn-peridot.png",
+        "startBid": "1250",
+        "startDate": "8/8/2024"
+    },
+    {
+        "name": "Eclipse Obsidian",
+        "image": "https://example.com/images/eclipse-obsidian.png",
+        "startBid": "1700",
+        "startDate": "10/8/2024"
+    }
+]

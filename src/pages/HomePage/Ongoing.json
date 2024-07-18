@@ -1,0 +1,104 @@
+[
+    {
+        "name": "Blood Ruby",
+        "image": "../../assets/images/blood-ruby.png",
+        "currentBid": "4999",
+        "remainingTime": "3h 4min 59s"
+    },
+    {
+        "name": "Emerald Stone",
+        "image": "../../assets/images/emerald-stone.png",
+        "currentBid": "2450",
+        "remainingTime": "5h 23min 10s"
+    },
+    {
+        "name": "Sapphire Gem",
+        "image": "../../assets/images/sapphire-gem.png",
+        "currentBid": "3200",
+        "remainingTime": "2h 15min 45s"
+    },
+    {
+        "name": "Diamond Crystal",
+        "image": "../../assets/images/diamond-crystal.png",
+        "currentBid": "5500",
+        "remainingTime": "4h 55min 12s"
+    },
+    {
+        "name": "Topaz Shard",
+        "image": "../../assets/images/topaz-shard.png",
+        "currentBid": "1900",
+        "remainingTime": "1h 30min 5s"
+    },
+    {
+        "name": "Ruby Heart",
+        "image": "../../assets/images/ruby-heart.png",
+        "currentBid": "4999",
+        "remainingTime": "3h 4min 59s"
+    },
+    {
+        "name": "Pearl Stone",
+        "image": "../../assets/images/pearl-stone.png",
+        "currentBid": "1500",
+        "remainingTime": "6h 40min 30s"
+    },
+    {
+        "name": "Amethyst Jewel",
+        "image": "../../assets/images/amethyst-jewel.png",
+        "currentBid": "3000",
+        "remainingTime": "2h 25min 19s"
+    },
+    {
+        "name": "Quartz Crystal",
+        "image": "../../assets/images/quartz-crystal.png",
+        "currentBid": "2000",
+        "remainingTime": "7h 50min 42s"
+    },
+    {
+        "name": "Opal Stone",
+        "image": "../../assets/images/opal-stone.png",
+        "currentBid": "2750",
+        "remainingTime": "5h 15min 29s"
+    },
+    {
+        "name": "Jade Gem",
+        "image": "../../assets/images/jade-gem.png",
+        "currentBid": "3200",
+        "remainingTime": "3h 40min 20s"
+    },
+    {
+        "name": "Garnet Stone",
+        "image": "../../assets/images/garnet-stone.png",
+        "currentBid": "2100",
+        "remainingTime": "2h 10min 50s"
+    },
+    {
+        "name": "Amber Jewel",
+        "image": "../../assets/images/amber-jewel.png",
+        "currentBid": "2500",
+        "remainingTime": "4h 45min 13s"
+    },
+    {
+        "name": "Citrine Gem",
+        "image": "../../assets/images/citrine-gem.png",
+        "currentBid": "2800",
+        "remainingTime": "1h 35min 55s"
+    },
+    {
+        "name": "Turquoise Stone",
+        "image": "../../assets/images/turquoise-stone.png",
+        "currentBid": "3300",
+        "remainingTime": "5h 50min 44s"
+    },
+    {
+        "name": "Peridot Jewel",
+        "image": "../../assets/images/peridot-jewel.png",
+        "currentBid": "2150",
+        "remainingTime": "6h 25min 10s"
+    },
+    {
+        "name": "Moonstone Gem",
+        "image": "../../assets/images/moonstone-gem.png",
+        "currentBid": "2700",
+        "remainingTime": "7h 15min 23s"
+    }
+]
