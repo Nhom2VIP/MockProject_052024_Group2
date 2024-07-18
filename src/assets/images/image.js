@@ -10,7 +10,8 @@ import BidMarket from './biDMarket.png';
 import BottomArrow from './bottom-arrow.png';
 import Minus from './minus.png';
 import Sale from './sale.png';
-
+import Shoe from './shoe.png';
+import User from './user.png';
 const images = {
   loginBanner: LoginBanner,
   logo: Logo,
@@ -23,7 +24,9 @@ const images = {
   biDMarket: BidMarket,
   bottomArrow: BottomArrow,
   minusIcon: Minus,
-  saleIcon: Sale
+  saleIcon: Sale,
+  shoe: Shoe,
+  user: User
 };
 
 export default images;

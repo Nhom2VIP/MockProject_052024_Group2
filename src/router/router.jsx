@@ -7,7 +7,8 @@ import AddProduct from "../pages/AddProduct/addProduct";
 import PaymentSaller from "../pages/payment/paymentSaller";
 import SearchPage from "../pages/SearchPage/SearchPage";
 import PlaceBid from "../pages/PlaceBid/PlaceBid";
-
+import CartItem from "../pages/CartItem/CartItem";
+import UserInformation from "../pages/UserInformation/UserInformation"
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,29 +18,34 @@ const router = createBrowserRouter([
         path: "/",
         element: <HomePage />,
       },
+
       {
-        path: "login",
-        element: <LoginPage />
+        path: "register",
+        element: <RegisterPage />
       },
       {
-        path:"register",
-        element:<RegisterPage/>
+        path: "add-product",
+        element: <AddProduct />
       },
       {
-        path:"add-product",
-        element:<AddProduct/>
+        path: "payment-saller",
+        element: <PaymentSaller />
       },
       {
-        path:"payment-saller",
-        element:<PaymentSaller/>
-      },
-      {
-        path:"search",
+        path: "search",
         element: <SearchPage />
       },
       {
         path: "place-bid",
         element: <PlaceBid />
+      },
+      {
+        path: "cart-item",
+        element: <CartItem />
+      },
+      {
+        path: "cart-item",
+        element: <UserInformation />
       }
     ],
   },
