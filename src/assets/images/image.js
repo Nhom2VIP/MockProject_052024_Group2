@@ -7,6 +7,9 @@ import BloodRuby from './blood-ruby.png';
 import RainbowDiamond from './rainbow-diamond.png';
 import Auction from './auction.png';
 import BidMarket from './biDMarket.png';
+import BottomArrow from './bottom-arrow.png';
+import Minus from './minus.png';
+import Sale from './sale.png';
 
 const images = {
   loginBanner: LoginBanner,
@@ -18,6 +21,9 @@ const images = {
   rainbowDiamond: RainbowDiamond,
   auction: Auction,
   biDMarket: BidMarket,
+  bottomArrow: BottomArrow,
+  minusIcon: Minus,
+  saleIcon: Sale
 };
 
 export default images;

@@ -5,6 +5,8 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import AddProduct from "../pages/AddProduct/addProduct";
 import PaymentSaller from "../pages/payment/paymentSaller";
+import SearchPage from "../pages/SearchPage/SearchPage";
+import PlaceBid from "../pages/PlaceBid/PlaceBid";
 
 const router = createBrowserRouter([
   {
@@ -30,8 +32,15 @@ const router = createBrowserRouter([
       {
         path:"payment-saller",
         element:<PaymentSaller/>
+      },
+      {
+        path:"search",
+        element: <SearchPage />
+      },
+      {
+        path: "place-bid",
+        element: <PlaceBid />
       }
-
     ],
   },
 ]);
