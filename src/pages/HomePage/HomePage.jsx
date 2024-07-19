@@ -17,18 +17,16 @@ const HomePage = () => {
 
   const displayedOngoing = Ongoing.slice(
     (ongoingPage - 1) * ongoingPageSize,
-    ongoingPage * ongoingPageSize
+    ongoingPage * ongoingPageSize,
   );
 
   const displayedUpcoming = Upcomming.slice(
     (upcomingPage - 1) * upcomingPageSize,
-    upcomingPage * upcomingPageSize
+    upcomingPage * upcomingPageSize,
   );
 
   return (
     <div className="">
-      
-
       <main className="container mx-auto w-[80%] p-4">
         <section className="my-8 flex text-center">
           <img src={images.biDMarket} alt="Spring Sale" className="" />
@@ -58,16 +56,13 @@ const HomePage = () => {
 
         <section className="my-8">
           <h2 className="text-2xl font-bold">Ongoing Auctions</h2>
-          <div className="flex flex-wrap gap-5 justify-between">
+          <div className="flex flex-wrap justify-between gap-5">
             {displayedOngoing.map((item, index) => {
-              return(
-                <OngoingCard data={item} key={index}/>
-              )
+              return <OngoingCard data={item} key={index} />;
             })}
-            
           </div>
           <div className="my-4 flex justify-center">
-          <Pagination
+            <Pagination
               totalPages={ongoingTotalPages}
               currentPage={ongoingPage}
               onPageChange={setOngoingPage}
@@ -78,15 +73,13 @@ const HomePage = () => {
         <section className="my-8">
           <h2 className="text-2xl font-bold">Upcoming Auctions</h2>
           <div className="flex w-full flex-wrap">
-            {displayedUpcoming.map((item,index) => {
-              return(
-                <UpcommingCard data={item} key={index}/>
-              )
+            {displayedUpcoming.map((item, index) => {
+              return <UpcommingCard data={item} key={index} />;
             })}
           </div>
-          
+
           <div className="my-4 flex justify-center">
-          <Pagination
+            <Pagination
               totalPages={upcomingTotalPages}
               currentPage={upcomingPage}
               onPageChange={setUpcomingPage}

@@ -26,7 +26,7 @@ const images = {
   minusIcon: Minus,
   saleIcon: Sale,
   shoe: Shoe,
-  user: User
+  user: User,
 };
 
 export default images;

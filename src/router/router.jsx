@@ -1,52 +1,52 @@
-import { createBrowserRouter } from "react-router-dom";
-import RootPage from "../pages/RootPage";
-import HomePage from "../pages/HomePage/HomePage";
-import LoginPage from "../pages/LoginPage/LoginPage";
-import RegisterPage from "../pages/RegisterPage/RegisterPage";
-import AddProduct from "../pages/AddProduct/addProduct";
-import PaymentSaller from "../pages/payment/paymentSaller";
-import SearchPage from "../pages/SearchPage/SearchPage";
-import PlaceBid from "../pages/PlaceBid/PlaceBid";
-import CartItem from "../pages/CartItem/CartItem";
-import UserInformation from "../pages/UserInformation/UserInformation"
+import { createBrowserRouter } from 'react-router-dom';
+import RootPage from '../pages/RootPage';
+import HomePage from '../pages/HomePage/HomePage';
+import LoginPage from '../pages/LoginPage/LoginPage';
+import RegisterPage from '../pages/RegisterPage/RegisterPage';
+import AddProduct from '../pages/AddProduct/addProduct';
+import PaymentSaller from '../pages/payment/paymentSaller';
+import SearchPage from '../pages/SearchPage/SearchPage';
+import PlaceBid from '../pages/PlaceBid/PlaceBid';
+import CartItem from '../pages/CartItem/CartItem';
+import UserInformation from '../pages/UserInformation/UserInformation';
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <RootPage />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <HomePage />,
       },
 
       {
-        path: "register",
-        element: <RegisterPage />
+        path: 'register',
+        element: <RegisterPage />,
       },
       {
-        path: "add-product",
-        element: <AddProduct />
+        path: 'add-product',
+        element: <AddProduct />,
       },
       {
-        path: "payment-saller",
-        element: <PaymentSaller />
+        path: 'payment-saller',
+        element: <PaymentSaller />,
       },
       {
-        path: "search",
-        element: <SearchPage />
+        path: 'search',
+        element: <SearchPage />,
       },
       {
-        path: "place-bid",
-        element: <PlaceBid />
+        path: 'place-bid',
+        element: <PlaceBid />,
       },
       {
-        path: "cart-item",
-        element: <CartItem />
+        path: 'cart-item',
+        element: <CartItem />,
       },
       {
-        path: "cart-item",
-        element: <UserInformation />
-      }
+        path: 'user',
+        element: <UserInformation />,
+      },
     ],
   },
 ]);
