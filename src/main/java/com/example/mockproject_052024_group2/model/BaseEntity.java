@@ -13,9 +13,6 @@ import java.util.Date;
 @Setter
 @MappedSuperclass
 public class BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     @CreationTimestamp
     @Column(updatable = false, nullable = false)
     private Date createdAt = new Date();

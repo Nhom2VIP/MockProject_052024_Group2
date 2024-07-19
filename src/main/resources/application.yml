@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/MockProject_052024_Group2?useSSL=false
+    url: jdbc:mysql://localhost:3306/MockProject_052024_Group2?useSSl=false
     username: root
     password: 13042003
   jpa:
@@ -10,10 +10,24 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.MySQLDialect
   main:
     allow-bean-definition-overriding: true
-  open-in-view: false
+#spring:
+#  datasource:
+#    url: jdbc:sqlserver://localhost:1433;databaseName=MockProject_052024_Group2;encrypt=true;trustServerCertificate=true
+#    username: sa
+#    password: 123456789
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop
+#    show-sql: true
+#    properties:
+#        hibernate:
+#          format_sql: true
+#          dialect: org.hibernate.dialect.SQLServerDialect
+#  main:
+#    allow-bean-definition-overriding: true
 
 server:
   port: 1903
