@@ -6,14 +6,14 @@ import { debounce } from 'lodash';
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = useState();
+  const [searchTerm, setSearchTerm] = useState('');
   const [selectedOption, setSelectedOption] = useState('All Categories');
 
   const debouncedSearch = useCallback(
     debounce((term) => {
       console.log('Searching for:', term);
     }, 300),
-    []
+    [],
   );
 
   const handleInputChange = (e) => {
@@ -27,13 +27,15 @@ const Navbar = () => {
   };
 
   const handleSearch = () => {
-    navigate(`/search?searchTerm=${encodeURIComponent(searchTerm)}&option=${encodeURIComponent(selectedOption)}`);
+    navigate(
+      `/search?searchTerm=${encodeURIComponent(searchTerm)}&option=${encodeURIComponent(selectedOption)}`,
+    );
   };
 
   return (
     <nav>
       <div className="border-b bg-white py-2">
-        <div className="container mx-auto flex items-center justify-between px-4">
+        <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
           <div className="flex space-x-4">
             <a href="#" className="text-sm text-gray-700">
               Hi Khoa!
@@ -68,38 +70,50 @@ const Navbar = () => {
         </div>
       </div>
       <div className="border-b bg-white">
-        <div className="mx-auto flex items-center px-4 py-2">
-          <div onClick={() => navigate('/')} className="flex cursor-pointer items-center space-x-4">
-            <img src={images.logo} alt="Logo" className="h-30" />
-          </div>
-          <div className="flex items-center space-x-8">
-            <div className="relative">
-              <button className="flex bg-white px-4 py-2 outline-none">
-                Shop by category <ChevronDown />
-              </button>
+        <div className="container mx-auto flex flex-wrap items-center justify-between px-4 py-2">
+          <div className="flex w-full flex-wrap items-center space-x-4 md:w-auto md:space-x-8">
+            <div className="relative w-full md:w-auto">
+              <div className="flex">
+                <div
+                  onClick={() => navigate('/')}
+                  className="flex cursor-pointer items-center space-x-4"
+                >
+                  <img src={images.logo} alt="Logo" className="md:h-30 h-20" />
+                </div>
+                <button className="my-auto flex bg-white px-4 py-2 outline-none md:w-auto">
+                  Shop by category <ChevronDown />
+                </button>
+              </div>
             </div>
-            <div className="flex items-center overflow-hidden border border-gray-300">
+            <div className="flex w-full items-center overflow-hidden border border-gray-300 md:w-auto">
               <input
                 type="text"
                 value={searchTerm}
-                autoComplete='off'
+                autoComplete="off"
                 onChange={handleInputChange}
-                className="w-[600px] px-4 py-2 outline-none"
+                className="w-full px-4 py-2 outline-none md:w-64 lg:w-[600px]"
                 placeholder="Search for anything"
               />
-              <select value={selectedOption} onChange={handleOptionChange} className="border-l border-gray-300 bg-white px-4 py-2">
-                <option>All Categories</option>
-                <option>Electronics</option>
-                <option>Fashion</option>
-                <option>Home & Garden</option>
+              <select
+                value={selectedOption}
+                onChange={handleOptionChange}
+                className="border-l border-gray-300 bg-white px-4 py-2"
+              >
+                <option value="All Categories">All Categories</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Home & Garden">Home & Garden</option>
               </select>
             </div>
-            <button className="bg-green-600 px-8 py-2 text-white" onClick={handleSearch}>
+            <button
+              className="bg-green-600 px-4 py-2 text-white md:px-8"
+              onClick={handleSearch}
+            >
               Search
             </button>
-            <button href="#" className="ml-2 text-green-600">
+            <a href="#" className="ml-2 text-green-600">
               Advanced
-            </button>
+            </a>
           </div>
         </div>
       </div>
